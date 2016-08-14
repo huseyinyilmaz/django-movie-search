@@ -95,3 +95,6 @@ ENV/
 
 # Mac files
 .DS_Store
+
+# database file
+db.sqlite3
