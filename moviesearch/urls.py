@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.conf.urls import include
+from django.views.generic.base import RedirectView
+
 import movies.urls
 
 urlpatterns = [
-
+    url(r'^$', RedirectView.as_view(pattern_name='movies-index')),
     url(r'^movies/', include(movies.urls))
 ]
