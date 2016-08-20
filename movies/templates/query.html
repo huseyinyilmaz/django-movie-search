@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <div>
+      <a href="{% url 'movies-index' %}">Main Page</a>
+    </div>
+
+    <form method="POST" action="">
+      {% csrf_token %}
+      {{form}}
+      <input type="SUBMIT" value="Submit"/>
+    </form>
+    {% if movie %}
+    <ul>
+        <li>Director: {{ movie.director }}</li>
+        <li>Rated: {{ movie.rated }}</li>
+        <li>Language: {{ movie.language }}</li>
+        <li>Title: {{movie.title}}</li>
+        <li>Year: {{movie.year}}</li>
+        <li>IMDB id: {{movie.imdb_id}}</li>
+        <li>IMDB rating: {{movie.imdb_rating}}</li>
+    </ul>
+    {% endif %}
+  </body>
+</html>
