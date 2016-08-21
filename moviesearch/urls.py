@@ -18,8 +18,10 @@ from django.conf.urls import include
 from django.views.generic.base import RedirectView
 
 import movies.urls
+import dynamicdecorators.urls
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(pattern_name='movies-index')),
-    url(r'^movies/', include(movies.urls))
+    url(r'^movies/', include(movies.urls)),
+    url(r'^dynamicdecorators/', include(dynamicdecorators.urls)),
 ]
