@@ -4,6 +4,8 @@ from django.shortcuts import render
 from movies import api
 from movies import forms
 
+from dynamicdecorators import decorators
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -17,6 +19,7 @@ class NameSearchView(View):
         ctx = {'form': self.form_class()}
         return render(request, self.template_name, ctx)
 
+    @decorators.name_search_post
     def post(self, request):
         form = self.form_class(request.POST)
         ctx = {'form': form,
@@ -39,6 +42,7 @@ class IDSearchView(View):
         ctx = {'form': self.form_class()}
         return render(request, self.template_name, ctx)
 
+    @decorators.id_search_post
     def post(self, request):
         form = self.form_class(request.POST)
         ctx = {'form': form,

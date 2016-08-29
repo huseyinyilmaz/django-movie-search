@@ -2,3 +2,4 @@ Django==1.10
 httmock==1.2.5
 python-placebo==1.0.1
 requests==2.11.0
+django-debug-toolbar==1.5

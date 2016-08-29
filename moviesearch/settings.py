@@ -50,7 +50,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'dynamicdecorators.middleware.dynamicdecorators_middleware',
-
 ]
 
 ROOT_URLCONF = 'moviesearch.urls'
@@ -64,6 +63,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.static',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -122,3 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DYNAMIC_DECORATORS = [
+    {'function': '', 'name': 'test', 'group': 'test'},
+    {'function': '', 'name': 'test2', 'group': 'test'},
+    {'function': '', 'name': 'test3', 'group': 'other'},
+]
