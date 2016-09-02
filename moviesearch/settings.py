@@ -124,7 +124,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 DYNAMIC_DECORATORS = [
-    {'function': '', 'name': 'test', 'group': 'test'},
-    {'function': '', 'name': 'test2', 'group': 'test'},
-    {'function': '', 'name': 'test3', 'group': 'other'},
+    {'function': 'movies.mocks.get_movie_valid_response',
+     'name': 'test asdf!@#', 'group': 'test'},
+    {'function': 'movies.mocks.get_movie_404_response',
+     'name': 'test2', 'group': 'test'},
+    {'function': 'movies.mocks.get_movie_503_response',
+     'name': 'test3', 'group': 'other'},
 ]
