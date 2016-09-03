@@ -16,7 +16,8 @@ def get_movie(title=None, year=None, imdb_id=None):
         # api was not available
         return None
     resp = response.json()
-    if resp['Response']:
+
+    if resp['Response'] == 'True':
         return {
             'language': resp['Language'],
             'director': resp['Director'],
