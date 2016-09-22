@@ -126,8 +126,6 @@ STATIC_URL = '/static/'
 DYNAMIC_DECORATORS = [
     {'function': 'movies.mocks.get_movie_valid_response',
      'name': 'Get movie valid response', 'group': 'test'},
-    {'function': 'movies.mocks.get_movie_404_response',
-     'name': 'Get movie 404 response', 'group': 'test'},
-    {'function': 'movies.mocks.get_movie_503_response',
-     'name': 'Get movie 503 response', 'group': 'other'},
+    'movies.mocks.get_movie_404_response',
+    'movies.mocks.get_movie_503_response',
 ]
